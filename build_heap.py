@@ -1,17 +1,26 @@
 # python3
+import math
 
 
 def build_heap(data):
     swaps = []
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
-
-
+    
+    for a in range(len(data),0,-1):
+        i = a
+        while i > 1:
+            j = i//2
+            if data[i-1]<data[j-1]:
+                data[i-1], data[j-1] = data[j-1], data[i-1]
+                swaps.append([j-1,i-1])
+                i = j
+            else:
+                i=0
     return swaps
 
 
 def main():
-    
     # TODO : add input and corresponding checks
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
@@ -22,7 +31,7 @@ def main():
     data = list(map(int, input().split()))
 
     # checks if lenght of data is the same as the said lenght
-    assert len(data) == n
+    # assert len(data) == n
 
     # calls function to assess the data 
     # and give back all swaps
