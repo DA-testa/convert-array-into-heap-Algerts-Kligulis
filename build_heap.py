@@ -26,7 +26,7 @@ def main():
     # first two tests are from keyboard, third test is from a file
     choice = input()
 
-    if choice == 'I':
+    if 'I'in(choice):
         # input from keyboard
         n = int(input())
         data = list(map(int, input().split()))
