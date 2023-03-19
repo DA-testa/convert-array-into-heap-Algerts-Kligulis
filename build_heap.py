@@ -31,9 +31,12 @@ def main():
         n = int(input())
         data = list(map(int, input().split()))
     else:
-        file = input()
-        n = file[0]
-        data = list(map(int, file[1].split()))
+        with open(input()) as fails:
+            n = int(fails.readline())
+            data = list(map(int, fails.readline().split()))
+        # file = input()
+        # n = file[0]
+        # data = list(map(int, file[1].split()))
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
 
