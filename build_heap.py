@@ -31,7 +31,7 @@ def main():
         n = int(input())
         data = list(map(int, input().split()))
     else:
-        with open(input().replace('\r','') + '.txt', mode="r") as fails:
+        with open('tests/' + input().replace('\r','') + '.txt', mode="r") as fails:
             n = int(fails.readline())
             data = list(map(int, fails.readline().split()))
         # file = input()
